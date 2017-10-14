@@ -1,2 +1,2 @@
-# fitnessphoenix.github.io
-Joey Hedges' Fitness Phoenix
+# joeyhedgesfit.github.io
+Joey Hedges Fitness

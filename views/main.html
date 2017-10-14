@@ -1,0 +1,125 @@
+<div data-ng-init="setup()">
+		<div class="row">
+			<div class="col-md-6">
+			  <h2>Fitness Phoenix</h2>
+
+				</div>
+							<div class="col-md-6">
+
+			  <h4>Rising out from the fire to the new you</h4>
+				</div>
+	  	</div>
+		
+				<div class="row">
+		<div class="col-md-12">
+		<div id="slidy-container">
+  <figure id="slidy">
+    <img src="images/1.jpg" alt="eyes" >
+    <img src="images/2.jpg" alt="lou" >
+    <img src="images/3.jpg" alt="lucie-2" >
+    <img src="images/4.jpg" alt="lucie" >
+  </figure>
+</div>
+</div>
+	</div>	
+	
+
+	
+	<div class="jumbotron">
+		<p>
+			Currently focussing on individual personal training sessions as well as small groups.
+		</p>
+		<p>
+			<ul class="nobullet">
+				<li>Morning sessions available Monday, Thursday, Friday starting around 7:00AM.
+				<li>Afternoon sessions available Monday, Wednesday, Thursday starting around 6:30PM.
+				<li>Weekend sessions available upon request and / or based on demand.
+			</ul>
+			<p>Availabiliy is subject to change over time.  If none of these time slots meet your needs, I am sure we can find a suitable time.
+			</p>	
+		</p>
+	</div>
+	
+	
+	  <p class="lead">
+		<img src="images/yeoman.png" alt="I'm Yeoman"><br>
+		Always a pleasure scaffolding your apps.
+	  </p>
+	  <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
+	<div class="row marketing">
+	  <h4>HTML5 Boilerplate</h4>
+	  <p>
+		HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
+	  </p>
+
+	  <h4>Angular</h4>
+	  <p>
+		AngularJS is a toolset for building the framework most suited to your application development.
+	  </p>
+
+	  <h4>Karma</h4>
+	  <p>Spectacular Test Runner for JavaScript.</p>
+	</div>
+</div>
+
+<script>
+/* user defined variables */
+var timeOnSlide = 5, 		
+    // the time each image will remain static on the screen, measured in seconds
+timeBetweenSlides = 1, 	
+    // the time taken to transition between images, measured in seconds
+
+// test if the browser supports animation, and if it needs a vendor prefix to do so
+    animationstring = 'animation',
+    animation = false,
+    keyframeprefix = '',
+    domPrefixes = 'Webkit Moz O Khtml'.split(' '), 
+    // array of possible vendor prefixes
+    pfx  = '',
+    slidy = document.getElementById("slidy"); 
+if (slidy.style.animationName !== undefined) { animation = true; } 
+// browser supports keyframe animation w/o prefixes
+
+if( animation === false ) {
+  for( var i = 0; i < domPrefixes.length; i++ ) {
+    if( slidy.style[ domPrefixes[i] + 'AnimationName' ] !== undefined ) {
+      pfx = domPrefixes[ i ];
+      animationstring = pfx + 'Animation';
+      keyframeprefix = '-' + pfx.toLowerCase() + '-';
+      animation = true;
+      break;
+    }
+  }
+}
+
+if( animation === false ) {
+  // animate in JavaScript fallback
+} else {
+  var images = slidy.getElementsByTagName("img"),
+      firstImg = images[0], 
+      // get the first image inside the "slidy" element.
+      imgWrap = firstImg.cloneNode(false);  // copy it.
+  slidy.appendChild(imgWrap); // add the clone to the end of the images
+  var imgCount = images.length, // count the number of images in the slide, including the new cloned element
+      totalTime = (timeOnSlide + timeBetweenSlides) * (imgCount - 1), // calculate the total length of the animation by multiplying the number of _actual_ images by the amount of time for both static display of each image and motion between them
+      slideRatio = (timeOnSlide / totalTime)*100, // determine the percentage of time an induvidual image is held static during the animation
+      moveRatio = (timeBetweenSlides / totalTime)*100, // determine the percentage of time for an individual movement
+      basePercentage = 100/imgCount, // work out how wide each image should be in the slidy, as a percentage.
+      position = 0, // set the initial position of the slidy element
+      css = document.createElement("style"); // start marking a new style sheet
+  css.type = "text/css";
+  css.innerHTML += "#slidy { text-align: left; margin: 0; font-size: 0; position: relative; width: " + (imgCount * 100) + "%;  }\n"; // set the width for the slidy container
+  css.innerHTML += "#slidy img { float: left; width: " + basePercentage + "%; }\n";
+  css.innerHTML += "@"+keyframeprefix+"keyframes slidy {\n"; 
+  for (i=0;i<(imgCount-1); i++) { // 
+    position+= slideRatio; // make the keyframe the position of the image
+    css.innerHTML += position+"% { left: -"+(i * 100)+"%; }\n";
+    position += moveRatio; // make the postion for the _next_ slide
+    css.innerHTML += position+"% { left: -"+((i+1) * 100)+"%; }\n";
+}
+  css.innerHTML += "}\n";
+  css.innerHTML += "#slidy { left: 0%; "+keyframeprefix+"transform: translate3d(0,0,0); "+keyframeprefix+"animation: "+totalTime+"s slidy infinite; }\n"; // call on the completed keyframe animation sequence
+document.body.appendChild(css); // add the new stylesheet to the end of the document
+}
+
+</script>

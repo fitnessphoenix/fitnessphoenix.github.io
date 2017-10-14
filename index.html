@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size: 100%; overflow-y: scroll; -webkit-tap-highlight-color: rgba(0,0,0,0); -ms-text-size-adjust: 100%;  -webkit-text-size-adjust: none;">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Joey Hedges Fitness Coaching and Personal Training">
+		<meta name="author" content="Joey Hedges">
+		
+		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+		<link rel="stylesheet" type="text/css" href="styles/main.css">
+
+		
+		 <title>Joey Hedges Fitness</title>
+		 <base href="/">
+		 
+	</head>
+
+  <body ng-app="joeyhedgesfitAppApp" ng-controller="MainCtrl">
+  
+      <div class="container">
+		<div class="row">
+		
+
+	
+			<section class="navigation">
+			  <div class="nav-container">
+				<div class="brand">
+				  <a href="#!"><img src="images/fitness_phoenix_logo_banner.jpg" alt="Fitness Phoenix"></a>
+				</div>
+				<nav>
+				  <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+				  <ul class="nav-list">
+					<li>
+					  <a href="#!">Home</a>
+					</li>
+					<li>
+					  <a href="#!/services.html">Services</a>
+<!-- 					  <ul class="nav-dropdown">
+						<li>
+						  <a href="#!">Web Design</a>
+						</li>
+						<li>
+						  <a href="#!">Web Development</a>
+						</li>
+						<li>
+						  <a href="#!">Graphic Design</a>
+						</li>
+					  </ul> -->
+					</li>
+					<li>
+					  <a href="#!/videos.html">Videos</a>
+					</li>
+		
+					<li>
+					  <a href="#!/testimonials.html">Triumphant Testimonials</a>
+					</li>
+					
+					<li>
+					  <a href="#!/about.html">About</a>
+					</li>
+					
+					
+					<li>
+					  <a href="#!/contact.html">Contact</a>
+					</li>
+		
+					
+		
+					
+					
+					<li>
+					  <a href="#!/forms.html">Forms</a>
+					  <ul class="nav-dropdown">
+						<li>
+						  <a href="#!/assessment.html">Assessment</a>
+						</li>
+						<li>
+						  <a href="#!/goal.html">Goal Agreement</a>
+						</li>
+						<li>
+						  <a href="#!/waiver.html">Waiver</a>
+						</li>
+					  </ul>
+					</li>
+		
+				  </ul>
+				</nav>
+			  </div>
+			</section>
+
+			
+
+
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<div ng-view></div>
+			</div>
+			</div>
+	  </div>
+
+
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+		<script src="scripts/slidy.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+		<script src="scripts/controllers/about.js"></script>
+		<script src="scripts/controllers/contact.js"></script>
+		<script src="scripts/controllers/services.js"></script>
+		<script src="scripts/controllers/videos.js"></script>
+		<script src="scripts/controllers/testimonials.js"></script>
+		
+		
+		<script>  
+		(function($) { // Begin jQuery
+  $(function() { // DOM ready
+    // If a link has a dropdown, add sub menu toggle.
+    $('nav ul li a:not(:only-child)').click(function(e) {
+      $(this).siblings('.nav-dropdown').toggle();
+      // Close one dropdown when selecting another
+      $('.nav-dropdown').not($(this).siblings()).hide();
+      e.stopPropagation();
+    });
+    // Clicking away from dropdown will remove the dropdown class
+    $('html').click(function() {
+      $('.nav-dropdown').hide();
+    });
+    // Toggle open and close nav styles on click
+    $('#nav-toggle').click(function() {
+      $('nav ul').slideToggle();
+    });
+    // Hamburger to X toggle
+    $('#nav-toggle').on('click', function() {
+      this.classList.toggle('active');
+    });
+  }); // end DOM ready
+})(jQuery); // end jQuery
+
+
+</script>
+	</body>
+</html>
