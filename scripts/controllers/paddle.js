@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name joeyhedgesfitAppApp.controller:ServicesCtrl
+ * @name joeyhedgesfitAppApp.controller:PaddleCtrl
  * @description
- * # ServicesCtrl
+ * # PaddleCtrl
  * Controller of the joeyhedgesfitAppApp
  */
 angular.module('joeyhedgesfitAppApp')
-  .controller('ServicesCtrl', function () {
+  .controller('PaddleCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',

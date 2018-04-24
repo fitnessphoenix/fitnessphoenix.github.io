@@ -51,6 +51,11 @@
         templateUrl: 'views/contact.html',
         controller: 'ContactCtrl',
         controllerAs: 'contact'
+      })	
+	  .when('/paddle.html', {
+        templateUrl: 'views/paddle.html',
+        controller: 'PaddleCtrl',
+        controllerAs: 'paddle'
       })	  
       .otherwise({
         redirectTo: '/'
