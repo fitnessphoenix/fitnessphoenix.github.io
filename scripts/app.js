@@ -56,6 +56,11 @@
         templateUrl: 'views/paddle.html',
         controller: 'PaddleCtrl',
         controllerAs: 'paddle'
+      })
+	  .when('/nutrition.html', {
+        templateUrl: 'views/nutrition.html',
+        controller: 'NutritionCtrl',
+        controllerAs: 'nutrition'
       })	  
       .otherwise({
         redirectTo: '/'
