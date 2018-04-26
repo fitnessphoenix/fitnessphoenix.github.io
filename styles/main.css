@@ -3,10 +3,6 @@
   height: 70px;
   background: #262626;
 }
-@font-face {
-  font-family: 'Magic';
-  src: url('/styles/magic.ttf')  format('truetype');
-}
 
 .brand {
   position: absolute;
@@ -14,12 +10,16 @@
   float: left;
   line-height: 70px;
   font-size: 2.4em;
-  font-family: magic;
+  font-family: Magic;
 }
 .brand a,
 .brand a:visited {
   color: #ffffff;
   text-decoration: none;
+}
+@font-face {
+  font-family: 'Magic';
+  src: url('/styles/magic.ttf')  format('truetype');
 }
 
 nav {
