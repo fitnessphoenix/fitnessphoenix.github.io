@@ -51,16 +51,6 @@
         templateUrl: 'views/contact.html',
         controller: 'ContactCtrl',
         controllerAs: 'contact'
-      })	
-	  .when('/paddle.html', {
-        templateUrl: 'views/paddle.html',
-        controller: 'PaddleCtrl',
-        controllerAs: 'paddle'
-      })
-	  .when('/nutrition.html', {
-        templateUrl: 'views/nutrition.html',
-        controller: 'NutritionCtrl',
-        controllerAs: 'nutrition'
       })	  
       .otherwise({
         redirectTo: '/'
