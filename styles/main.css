@@ -14,9 +14,15 @@
   padding-left: 42px;
   float: left;
   line-height: 70px;
-  font-size: 2.4em;
+  font-size: 14px;
   font-family: Magic;
 }
+
+h2 {
+	font-size: 14px;
+}
+
+
 .brand a,
 .brand a:visited {
   color: #ffffff;
@@ -171,9 +177,7 @@ body {
   font-family: Helvetica, Arial, sans-serif;
 }
 
-h2 {
-	font-size: 14px;
-}
+
 h2, h4 {
 	margin: auto;
 	text-align: center;
