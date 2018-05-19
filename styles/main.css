@@ -9,7 +9,7 @@
   background: #262626;
 }
 
-.brand {
+.brand h2{
   position: absolute;
   padding-left: 42px;
   float: left;
@@ -17,11 +17,6 @@
   font-size: 14px;
   font-family: Magic;
 }
-
-h2 {
-	font-size: 14px;
-}
-
 
 .brand a,
 .brand a:visited {
