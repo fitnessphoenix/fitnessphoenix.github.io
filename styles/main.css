@@ -43,7 +43,7 @@ nav ul li {
 nav ul li a,
 nav ul li a:visited {
   display: block;
-  padding: 0 20px;
+  padding: 0 15px;
   line-height: 70px;
   background: #262626;
   color: #ffffff;
